@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="https://unpkg.com/react@18.0.0/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.development.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+
+<body>
+    <!-- 准备好一个“容器” -->
+    <div id="test"></div>
+
+    
+    <script type="text/babel">
+        const VDOM = <h1>Hello</h1> /* 此处一定不要写引号，因为不是字符串 */
+            //2.渲染虚拟DOM到页面
+            const root = ReactDOM.createRoot(document.querySelector('#test'));
+            root.render(VDOM);
+    </script>
+</body>
+</html>
