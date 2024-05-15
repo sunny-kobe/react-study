@@ -1,30 +1,36 @@
-function Card({ children }) {
-  return (
-    <div className="card">
-      <div className="card-content">
-        {children}
-      </div>
-    </div>
-  );
-}
+import { useState } from 'react';
 
-export default function Profile() {
+let nextId = 0;
+
+export default function List() {
+  const [name, setName] = useState('');
+  const [artists, setArtists] = useState([]);
+
+  function iden<T>(arg: T): T {
+    return arg
+  }
+
+  let art = iden([1])
+
+
   return (
-    <div>
-      <Card>
-        <h1>Photo</h1>
-        <img
-          className="avatar"
-          src="https://i.imgur.com/OKS67lhm.jpg"
-          alt="Aklilu Lemma"
-          width={100}
-          height={100}
-        />
-      </Card>
-      <Card>
-        <h1>About</h1>
-        <p>Aklilu Lemma was a distinguished Ethiopian scientist who discovered a natural treatment to schistosomiasis.</p>
-      </Card>
-    </div>
+    <>
+      <h1>振奋人心的雕塑家们：</h1>
+      <input
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
+      <button onClick={() => {
+        artists.push({
+          id: nextId++,
+          name: name,
+        });
+      }}>添加</button>
+      <ul>
+        {artists.map(artist => (
+          <li key={artist.id}>{artist.name}</li>
+        ))}
+      </ul>
+    </>
   );
 }
