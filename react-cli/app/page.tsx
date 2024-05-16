@@ -1,11 +1,11 @@
 
-import Form from "./components/Form";
+import Cart from "./components/Cart";
 
 
 export default function Home() {
   return (
     <main>
-      <Form />
+      <Cart />
     </main>
   );
 }
