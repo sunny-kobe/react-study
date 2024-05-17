@@ -1,11 +1,12 @@
-
-import Cart from "./components/Cart";
+import FlatState from "./components/FlatState";
 
 
 export default function Home() {
   return (
     <main>
-      <Cart />
+      <div>
+        <FlatState />
+      </div>
     </main>
   );
 }
